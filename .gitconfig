@@ -1,0 +1,8 @@
+[user]
+	name = Saren Currie
+	email = saren@sarencurrie.com
+	username = Saren Currie
+[color]
+	ui = auto
+[push]
+	default = simple
