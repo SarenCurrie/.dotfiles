@@ -47,12 +47,6 @@ alias cd~='cd ~'
 alias curlxml='curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET'
 alias curljson='curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET'
 
-alias itunes='open /Applications/iTunes.app'
-alias mail='open /Applications/Mail.app'
-alias safari='open /Applications/Safari.app'
-alias steam='open /Applications/Steam.app'
-
-
 #google search function
 function google { 
 	Q="$@"; 
