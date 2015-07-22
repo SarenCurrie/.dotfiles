@@ -6,3 +6,6 @@
 	ui = auto
 [push]
 	default = simple
+[core]
+	editor = mate
+	excludesfile = ~/.gitignore_global

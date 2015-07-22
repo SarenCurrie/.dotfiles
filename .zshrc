@@ -96,7 +96,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx brew git adb jira)
+plugins=(osx brew git adb)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,3 +131,5 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 fortune
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
