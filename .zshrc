@@ -9,14 +9,10 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
-export OPENVPN=/usr/local/etc/openvpn
-
 alias c='clear'
 
 alias ll='ls -l'
 alias lll='ls -al'
-
-alias dtfg='echo "To the gold!"'
 
 alias tate='mate'
 
