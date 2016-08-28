@@ -7,5 +7,8 @@
 [push]
 	default = simple
 [core]
-	editor = mate
+	editor = vim
 	excludesfile = ~/.gitignore_global
+	quotepath = false
+[log]
+	decorate = true

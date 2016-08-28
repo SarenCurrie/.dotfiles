@@ -9,16 +9,10 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
-export OPENVPN=/usr/local/etc/openvpn
-
 alias c='clear'
 
 alias ll='ls -l'
 alias lll='ls -al'
-
-alias dtfg='echo "To the gold!"'
-
-alias tate='mate'
 
 # Git aliases
 alias g='git'
@@ -27,10 +21,10 @@ alias gtap='git add -p'
 alias gtbr='git branch'
 alias gtch='git checkout'
 alias gtcl='git clone'
-alias gtcm='git commit -m'
+alias gtcm='git commit -S'
 alias gtdf='git diff'
 alias gtft='git fetch'
-alias gtgr='git log --all --graph --decorate'
+alias gtgr='git log --oneline --graph --decorate'
 alias gtlg='git log'
 alias gtmg='git merge'
 alias gtpl='git pull'
@@ -46,17 +40,11 @@ alias cd..='cd ..'
 alias cd-='cd -'
 alias cd~='cd ~'
 
-#curl
+# curl
 alias curlxml='curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET'
 alias curljson='curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET'
 
-#google search function
-function google { 
-	Q="$@"; 
-	GOOG_URL='https://www.google.com/search?q=';
-	stream=$(open "${GOOG_URL}${Q//\ /+}" | grep -oP '\/url\?q=.+?&amp' | sed 's|/url?q=||; s|&amp||'); 
-	echo -e "${stream//\%/\x}"; 
-}
+alias weather='curl wttr.in/Auckland'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -77,7 +65,7 @@ export UPDATE_ZSH_DAYS=7
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -96,13 +84,13 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx brew git adb)
+plugins=(osx brew git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/sarenc/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -133,3 +121,14 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X
 fortune
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+export NVM_DIR="/Users/sarenc/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
